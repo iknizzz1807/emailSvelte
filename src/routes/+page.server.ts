@@ -7,7 +7,7 @@ export const actions = {
       const email = formData.get("to");
       const subject = formData.get("subject");
       const body = formData.get("body");
-      let from = `Nguyen Thong - Lumina Agency <iknizemail@gmail.com>`;
+      let from = `Nguyen Thong - ikniz <iknizemail@gmail.com>`;
       const message = {
         from: from,
         to: email,
