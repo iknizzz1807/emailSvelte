@@ -5,14 +5,23 @@ export const actions = {
     try {
       const formData = await request.formData();
       const email = formData.get("to");
-      const subject = formData.get("subject");
-      const body = formData.get("body");
-      let from = `Nguyen Thong - ikniz <iknizemail@gmail.com>`;
+      const subject: String = "We have received your form.";
+      const body1 = formData.get("body");
+      const body: string =
+        "Thank you for submitting the form. Please waiting for further information in the future.";
+      let from: String = `Nguyen Thong - ikniz <iknizemail@gmail.com>`;
       const message = {
         from: from,
         to: email,
         subject: subject,
         text: body,
+      };
+
+      const message1 = {
+        from: from,
+        to: "mythonggg@gmail.com",
+        subject: `New form submission from ${email}`,
+        text: body1,
       };
 
       const sendEmail = async (message: any) => {
@@ -29,6 +38,8 @@ export const actions = {
       };
 
       await sendEmail(message);
+
+      await sendEmail(message1);
 
       return {
         success: "Email is sent",

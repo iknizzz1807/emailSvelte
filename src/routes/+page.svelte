@@ -1,11 +1,12 @@
 <script>
+    import { enhance } from '$app/forms';
     export let form;
 </script>
 
 <div class="wrapper">
     <fieldset>
         <legend>Contact us</legend>
-        <form method="POST" class="container">
+        <form method="POST" class="container" use:enhance>
             <div class="input">
                 <label for="">Your email:</label>
                 <input name="to" type="email" placeholder="abc123@gmail.com" />
